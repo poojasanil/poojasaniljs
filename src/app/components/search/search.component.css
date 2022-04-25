@@ -1,0 +1,30 @@
+img {
+    height: 125px;
+    width: 125px;
+}
+
+label {
+    min-width: 150px;
+    display: inline-block;
+}
+
+.userDetailsSection {
+    left: 40%;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 15px;
+    position: absolute;
+    background-color: burlywood;
+}
+
+.userDetailsSection div {
+    margin: 5px 0px;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    text-align: none;
+}

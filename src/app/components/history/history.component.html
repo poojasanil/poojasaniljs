@@ -1,0 +1,25 @@
+<div>
+    <button routerLink="" class="backBtn"> <-Go Back To Dashboard
+    </button>
+</div>
+
+<div *ngIf="searchHistory.length; else noHistory">
+    <h2>Search History <i> (<span style="color: green">Successful</span> and <span style="color: red">Unsuccessfull</span> attempts)</i>:</h2>
+
+    <div>
+        <ol>
+            <li *ngFor="let user of searchHistory" (click)="goToSearch(user.name)" [ngStyle]="{'color': user.color}">
+                 {{user.name}}</li>
+        </ol>
+    </div>
+
+    <div>
+        <button (click)="clearHistory()">Clear Search History</button>
+    </div>
+</div>
+
+<ng-template #noHistory>
+    <div class="noHist">
+    No History of Searches
+</div>
+</ng-template>

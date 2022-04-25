@@ -1,0 +1,50 @@
+
+
+<div>
+    <button routerLink="" class="backBtn"> <-Go Back To Dashboard
+    </button>
+</div>
+<div class="center">
+    <input type="text" [(ngModel)]="username" (input)="userDetails = null" style="height: 25px;">
+    <button
+    style="margin-left: 5px;background-color: aliceblue;height: 30px;width: 85px;border-radius: 5px;font-weight: bold;" 
+    [disabled]="!username.length" (click)="search()">Search</button>
+</div>
+
+<div class="userDetailsSection" *ngIf="userDetails">
+    <div class="center">
+        <img [src]="userDetails.avatar_url" alt="Place image title">
+    </div>
+    <h2>Details:</h2>
+
+    <div>
+        <label for="name">Name: </label>
+        <input disabled id="name" type="text" [(ngModel)]="userDetails.name">
+    </div>
+    <div>
+        <label for="location">Location: </label>
+        <input disabled id="location" type="text" [(ngModel)]="userDetails.location">
+    </div>
+
+    <div>
+        <label for="twitter_username">Twitter Username: </label>
+        <input disabled id="twitter_username" type="text" [(ngModel)]="userDetails.twitter_username">
+    </div>
+
+    <div>
+        <label for="followers">Followers: </label>
+        <input disabled id="followers" type="text" [(ngModel)]="userDetails.followers">
+    </div>
+
+    <div>
+        <label for="following">Following: </label>
+        <input disabled id="following" type="text" [(ngModel)]="userDetails.following">
+    </div>
+
+    <div class="center" *ngIf="userDetails.blog">
+        <button style="margin: 10px;">
+        <a [href]="userDetails.blog" target="_blank">BLOG</a>
+    </button>
+</div>
+</div>
+
